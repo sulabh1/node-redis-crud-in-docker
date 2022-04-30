@@ -1,0 +1,19 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+    # networks:
+    #   - redis
+  node-app:
+    build: .
+    ports:
+      - "8000:8080"
+    # depends_on:
+    #   - redis-server
+    # links:
+    #   - redis-server
+    # networks:
+    #   - redis
+# networks:
+#   redis:
+#     driver: bridge
